@@ -1,6 +1,6 @@
 import { AbstractDocument } from '../abstract.schema';
 import { Schema, Prop, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
+import { Document, ObjectId } from 'mongoose';
 
 export type TheaterDocument = Theater & Document;
 
@@ -16,8 +16,6 @@ export class Theater extends AbstractDocument {
   theaterName: string;
   @Prop()
   location: string;
-  @Prop()
-  no_of_screens: number;
 
   @Prop({ type: Boolean, default: false })
   isBlocked: boolean;
@@ -27,21 +25,16 @@ export class Theater extends AbstractDocument {
 
   @Prop({ type: Boolean, default: false })
   isApproved: boolean;
-
   @Prop({
     type: [
       {
         name: { type: String },
         row: { type: Number },
         col: { type: Number },
-        showInfo: [
-          {
-            movieId: { type: String },
-            price: { type: Number },
-            time: { type: String },
-            screenType: { type: String },
-          },
-        ],
+        screenType: { type: String  },
+        price: { type: Number  },
+        movieId: { type: String  },
+        time: { type: String  },
       },
     ],
   })
@@ -49,12 +42,10 @@ export class Theater extends AbstractDocument {
     name: string;
     row: number;
     col: number;
-    showInfo: {
-      movieId: string;
-      price: number;
-      time: string;
-      screenType: string;
-    }[];
+    screenType: string;
+    price: number;
+    movieId: ObjectId;
+    time: string;
   }[];
 }
 

@@ -1,5 +1,4 @@
 import { Schema } from '@nestjs/mongoose';
-// import { SchemaTypes, Types } from 'mongoose';
 import mongoose from 'mongoose';
 
 @Schema()

@@ -22,7 +22,6 @@ export class ClientController {
 
   @Post('/signup')
   signup(@Body() body: createUserDto): any {
-    console.log(`from controller ${body}`);
     return this.clientService.createUser(body);
   }
 

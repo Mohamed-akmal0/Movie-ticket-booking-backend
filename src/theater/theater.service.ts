@@ -39,9 +39,9 @@ export class TheaterService {
     const getAddedScreens = await this.theaterRepo.screens(id);
     return getAddedScreens;
   }
-  async screens(body: createScreenDto, id: string): Promise<any> {
-    const screens = await this.theaterRepo.addScreen(body, id);
-    return screens;
+  async screens(body: createScreenDto): Promise<any> {
+    const addedScreens = await this.theaterRepo.addScreen(body);
+    return addedScreens;
   }
   async addMovie(body: addMovieToScreen) {
     const addedMovie = await this.theaterRepo.addMoviesInScreen(body);

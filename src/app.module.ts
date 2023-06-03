@@ -17,7 +17,6 @@ import { TheaterModule } from './theater/theater.module';
       }),
       envFilePath: '.env',
     }),
-    // MongooseModule.forRoot("mongodb://localhost/backend"),
 
     ClientModule,
     AdminModule,

@@ -33,17 +33,16 @@ export class TheaterController {
   }
   @Get('getScreens/:id')
   screens(@Param() id: string) {
+    console.log(id);
     return this.theaterService.getScreens(id);
   }
-  @Patch('addScreens/:id')
-  addScreens(@Param() Id: object, @Body() body: createScreenDto) {
-    //@ts-ignore
-    const { id } = Id;
-    return this.theaterService.screens(body, id);
+  @Patch('addScreens')
+  addScreens(@Body() body: createScreenDto) {
+    console.log(body)
+    return this.theaterService.screens(body);
   }
   @Patch('addMovieToScreen')
   addMovieInScreen(@Body() body: addMovieToScreen) {
-    console.log(body);
     return this.theaterService.addMovie(body);
   }
 

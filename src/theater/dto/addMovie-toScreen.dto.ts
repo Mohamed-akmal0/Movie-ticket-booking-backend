@@ -1,7 +1,10 @@
 export interface addMovieToScreen {
   movieId: string;
-  price: number;
-  screenType: string;
-  screenId: string;
-  time: string;
+  screenId :string;
+  theaterId: string;
+  addedMovie:{
+    price : number;
+    time : string;
+    screenType : string;
+  }
 }

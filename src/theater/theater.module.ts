@@ -4,9 +4,8 @@ import { JwtModule } from '@nestjs/jwt';
 import { TheaterController } from './theater.controller';
 import { TheaterService } from './theater.service';
 import { MongooseModule } from '@nestjs/mongoose';
-import { MovieSchema, Theater, TheaterSchema } from '@app/common';
+import { Theater, TheaterSchema } from '@app/common';
 import { TheaterRepo } from './theater.repository';
-import { Movie } from '@app/common';
 import { AdminModule } from 'src/admin/admin.module';
 
 @Module({
